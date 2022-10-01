@@ -203,10 +203,7 @@ function pushCurrentDir{
 }
 
 function installDependencies{
-    Write-Host "Thank you for bearing with Microsoft..."
-    Start-Sleep 1
-    Write-Host "Preparing Winget Package Manager"
-    Start-Sleep 2
+    Write-Host "Installing Winget dependencies... New window will launch..."
     .\data\winget-pkg.msixbundle
 }
 
@@ -506,13 +503,13 @@ $installDep.height        = 30
 $installDep.location      = New-Object System.Drawing.Point(20,328)
 $installDep.Font          = 'Microsoft Sans Serif,11'
 
-$feelingluckyinoffice               = New-Object system.Windows.Forms.Button
-$feelingluckyinoffice.BackColor     = "#ffffff"
-$feelingluckyinoffice.text          = "New Configuration"
-$feelingluckyinoffice.width         = 181
-$feelingluckyinoffice.height        = 30
-$feelingluckyinoffice.location      = New-Object System.Drawing.Point(20,375)
-$feelingluckyinoffice.Font          = 'Microsoft Sans Serif,11'
+$feelingluckysetup               = New-Object system.Windows.Forms.Button
+$feelingluckysetup.BackColor     = "#ffffff"
+$feelingluckysetup.text          = "New Configuration"
+$feelingluckysetup.width         = 181
+$feelingluckysetup.height        = 30
+$feelingluckysetup.location      = New-Object System.Drawing.Point(20,375)
+$feelingluckysetup.Font          = 'Microsoft Sans Serif,11'
 
 $exportpcdata               = New-Object system.Windows.Forms.Button
 $exportpcdata.BackColor     = "#ffffff"
@@ -576,13 +573,11 @@ $massmigration.Font          = 'Microsoft Sans Serif,12'
 # LEAVE COMMENTED UNLESS USING LEGACY VERSION
 
 
-$Scripthaven.controls.AddRange(@($eztag,$installdep,$feelingluckyinoffice,$massmigration,$disablesubcontent,$removeonedrive,$groupinfo,$winupdatereset,$netreset,$exportpcdata,$smb1domainjoinfix))
+$Scripthaven.controls.AddRange(@($eztag,$installdep,$feelingluckysetup,$massmigration,$disablesubcontent,$removeonedrive,$groupinfo,$winupdatereset,$netreset,$exportpcdata,$smb1domainjoinfix))
 
-#$inofficesetuptool.Add_Click({})
-#$onsitesetuptool.Add_Click({})
 $smb1domainjoinfix.Add_Click({smbDomainJoinFix})
 $installDep.Add_Click({installDependencies})
-$feelingluckyinoffice.Add_Click({feelingLuckySetup})
+$feelingluckysetup.Add_Click({feelingLuckySetup})
 $exportpcdata.Add_Click({exportProfileInformation})
 $netreset.Add_Click({})
 $winupdatereset.Add_Click({resetWindowsUpdate})
@@ -594,7 +589,7 @@ $massmigration.Add_Click({massWProfileMigration})
 $Scripthaven.Add_MouseEnter({$eztag.text = "Hover a selection for information." })
 
 $exportpcdata.Add_MouseEnter({$eztag.text = "Export mapped drive and configured printers information."})
-$feelingluckyinoffice.Add_MouseEnter({$eztag.text = "One-click in-office PC setup, including Windows settings config, PC rename,`ngeneral application install. PC IS REBOOTED UPON COMPLETION."})
+$feelingluckysetup.Add_MouseEnter({$eztag.text = "One-click new PC setup, disables sleep settings and cortana, installs basic applications. Sets timezone to EST."})
 $inofficesetuptool.Add_MouseEnter({$eztag.text = "Launch the full in-office setup wizard."})
 $onsitesetuptool.Add_MouseEnter({$eztag.text = "Launch the onsite setup/migration wizard."})
 $smb1domainjoinfix.Add_MouseEnter({$eztag.text = "Fix for cannot join domain with SMB1 disabled issue. Enables SMB1`nand walks you through joining the domain."})
