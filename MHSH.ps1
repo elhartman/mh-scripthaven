@@ -254,7 +254,7 @@ function feelingLuckySetup{
     Start-Sleep 2
     Write-Host "Microsoft Office Apps for Business will continue to install in the background..."
 
-    .\data\office\setup.exe /configure .\office\standard-365-deploy.xml
+    .\data\office\setup.exe /configure .\office\office-deploy.xml
 
     Write-Host "Next Steps: Run all available Windows updates. After the next reboot, remember to install Kaseya VSA Agent and additional required programs."
 
