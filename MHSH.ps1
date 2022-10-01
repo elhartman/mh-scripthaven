@@ -508,7 +508,7 @@ $installDep.Font          = 'Microsoft Sans Serif,11'
 
 $feelingluckyinoffice               = New-Object system.Windows.Forms.Button
 $feelingluckyinoffice.BackColor     = "#ffffff"
-$feelingluckyinoffice.text          = "In-Office Configuration"
+$feelingluckyinoffice.text          = "New Configuration"
 $feelingluckyinoffice.width         = 181
 $feelingluckyinoffice.height        = 30
 $feelingluckyinoffice.location      = New-Object System.Drawing.Point(20,375)
